@@ -85,11 +85,18 @@ iface = gr.Interface(
     description="Haz preguntas sobre los cursos, certificados, acceso, módulos, y más."
 )
 
+iface = gr.Interface(
+    fn=responder,
+    inputs="text",
+    outputs="text",
+    title="AIVA – Asistente AIVI",
+    description="Haz preguntas sobre los cursos, certificados, acceso, módulos, y más."
+)
+
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 8080))
-    iface = gr.Interface(fn=responder, inputs="text", outputs="text", title="AIVA - Asistente AIVI")
-
+    iface.launch(server_name="0.0.0.0", server_port=port, share=False, inbrowser=False)
 
 
 
