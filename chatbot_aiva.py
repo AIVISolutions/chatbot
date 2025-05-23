@@ -88,7 +88,8 @@ iface = gr.Interface(
 if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 8080))
-    iface.launch(server_name="0.0.0.0", server_port=port, share=False, inbrowser=False)
+    iface = gr.Interface(fn=responder, inputs="text", outputs="text", title="AIVA - Asistente AIVI")
+
 
 
 
