@@ -85,4 +85,7 @@ iface = gr.Interface(
     description="Haz preguntas sobre los cursos, certificados, acceso, módulos, y más."
 )
 
-iface.launch()
+if __name__ == "__main__":
+    iface.launch(server_name="0.0.0.0", server_port=10000)
+
+
